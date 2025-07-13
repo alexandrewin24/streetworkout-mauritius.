@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conseils / Tips - Bodyweight Fitness</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .lang-switch button {
+      background: #333;
+      color: #f5f5f5;
+      border: none;
+      padding: 8px 12px;
+      margin-left: 5px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .lang-switch button.active {
+      background-color: #ff9800;
+      color: #121212;
+    }
+
+    [data-lang="en"] {
+      display: none;
+    }
+
+    .en-visible [data-lang="fr"] {
+      display: none;
+    }
+
+    .en-visible [data-lang="en"] {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" data-lang="fr">Accueil</a>
+      <a href="index.html" data-lang="en">Home</a>
+      <a href="conseils.html" data-lang="fr">Conseils</a>
+      <a href="conseils.html" data-lang="en">Tips</a>
+      <a href="contact.html" data-lang="fr">Contact</a>
+      <a href="contact.html" data-lang="en">Contact</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button id="btn-fr" class="active">🇫🇷 Français</button>
+      <button id="btn-en">🇬🇧 English</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- FRANÇAIS -->
+    <div data-lang="fr">
+      <h1>Conseils de Fitness au Poids du Corps</h1>
+      <h2>Échauffement</h2>
+      <p>Avant chaque séance, échauffe-toi pendant 5 à 10 minutes :</p>
+      <ul class="conseils">
+        <li>Rotations articulaires (tête, bras, poignets)</li>
+        <li>Fentes dynamiques</li>
+        <li>Montées de genoux ou jumping jacks</li>
+      </ul>
+
+      <h2>Exercices de base</h2>
+      <ul class="conseils">
+        <li><strong>Pompes</strong> — Pectoraux, triceps, gainage</li>
+        <li><strong>Squats</strong> — Jambes, fessiers</li>
+        <li><strong>Planche</strong> — Abdos profonds</li>
+        <li><strong>Fentes</strong> — Travail unilatéral jambes</li>
+      </ul>
+
+      <h2>Progression</h2>
+      <p>Augmente les séries/répétitions chaque semaine. Alterne jours d’entraînement et de repos.</p>
+    </div>
+
+    <!-- ENGLISH -->
+    <div data-lang="en">
+      <h1>Bodyweight Fitness Tips</h1>
+      <h2>Warm-up</h2>
+      <p>Warm up for 5 to 10 minutes before each session:</p>
+      <ul class="conseils">
+        <li>Joint rotations (head, arms, wrists)</li>
+        <li>Dynamic lunges</li>
+        <li>High knees or jumping jacks</li>
+      </ul>
+
+      <h2>Basic Exercises</h2>
+      <ul class="conseils">
+        <li><strong>Push-ups</strong> — Chest, triceps, core</li>
+        <li><strong>Squats</strong> — Legs, glutes</li>
+        <li><strong>Plank</strong> — Deep abdominal core</li>
+        <li><strong>Lunges</strong> — One-leg strength</li>
+      </ul>
+
+      <h2>Progression</h2>
+      <p>Increase reps/sets weekly. Alternate workout and rest days.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p data-lang="fr">&copy; 2025 Fitness Poids du Corps. Tous droits réservés.</p>
+    <p data-lang="en">&copy; 2025 Bodyweight Fitness. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const btnFr = document.getElementById("btn-fr");
+    const btnEn = document.getElementById("btn-en");
+    const body = document.body;
+
+    btnFr.addEventListener("click", () => {
+      body.classList.remove("en-visible");
+      btnFr.classList.add("active");
+      btnEn.classList.remove("active");
+    });
+
+    btnEn.addEventListener("click", () => {
+      body.classList.add("en-visible");
+      btnEn.classList.add("active");
+      btnFr.classList.remove("active");
+    });
+  </script>
+</body>
+</html>

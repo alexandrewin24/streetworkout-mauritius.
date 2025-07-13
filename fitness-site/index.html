@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness Poids du Corps / Bodyweight Fitness</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .lang-switch { position: absolute; top: 20px; right: 20px; }
+    .lang-switch button {
+      background: #333; color: #f5f5f5; border: none;
+      padding: 8px 12px; margin-left: 5px; cursor: pointer;
+      border-radius: 4px; font-weight: 600;
+    }
+    .lang-switch button.active { background-color: #ff9800; color: #121212; }
+    [data-lang="en"] { display: none; }
+    .en-visible [data-lang="fr"] { display: none; }
+    .en-visible [data-lang="en"] { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" data-lang="fr">Accueil</a>
+      <a href="index.html" data-lang="en">Home</a>
+      <a href="conseils.html" data-lang="fr">Conseils</a>
+      <a href="conseils.html" data-lang="en">Tips</a>
+      <a href="contact.html" data-lang="fr">Contact</a>
+      <a href="contact.html" data-lang="en">Contact</a>
+    </nav>
+    <div class="lang-switch">
+      <button id="btn-fr" class="active">🇫🇷 Français</button>
+      <button id="btn-en">🇬🇧 English</button>
+    </div>
+  </header>
+  <main class="container">
+    <div data-lang="fr">
+      <h1>Bienvenue chez Fitness Poids du Corps</h1>
+      <p>Bonjour et bienvenue ! Nous sommes une équipe de coaches passionnés, dédiée à t’aider à atteindre tes objectifs de remise en forme sans avoir besoin de matériel.</p>
+      <h2>Pourquoi le fitness au poids du corps ?</h2>
+      <p>Le bodyweight training est un moyen efficace de travailler la force, l’endurance et la mobilité, où que tu sois.</p>
+      <h2>Nos prestations</h2>
+      <ul>
+        <li>Programmes personnalisés</li>
+        <li>Coaching en ligne</li>
+        <li>Guides et vidéos</li>
+        <li>Suivi nutritionnel</li>
+      </ul>
+      <p>Découvre nos <a href="conseils.html">conseils gratuits</a> ou <a href="contact.html">contacte-nous</a>.</p>
+    </div>
+    <div data-lang="en">
+      <h1>Welcome to Bodyweight Fitness</h1>
+      <p>Hello and welcome! We are a team of passionate coaches helping you reach your fitness goals — no equipment needed.</p>
+      <h2>Why bodyweight training?</h2>
+      <p>Bodyweight training is a powerful way to build strength, endurance, and mobility, anywhere you are.</p>
+      <h2>Our Services</h2>
+      <ul>
+        <li>Personalized programs</li>
+        <li>Online coaching</li>
+        <li>Step-by-step guides & videos</li>
+        <li>Basic nutrition tracking</li>
+      </ul>
+      <p>Check out our <a href="conseils.html">free tips</a> or <a href="contact.html">get in touch</a>.</p>
+    </div>
+  </main>
+  <footer>
+    <p data-lang="fr">&copy; 2025 Fitness Poids du Corps. Tous droits réservés.</p>
+    <p data-lang="en">&copy; 2025 Bodyweight Fitness. All rights reserved.</p>
+  </footer>
+  <script>
+    const btnFr = document.getElementById("btn-fr");
+    const btnEn = document.getElementById("btn-en");
+    const body = document.body;
+    btnFr.addEventListener("click", () => {
+      body.classList.remove("en-visible");
+      btnFr.classList.add("active");
+      btnEn.classList.remove("active");
+    });
+    btnEn.addEventListener("click", () => {
+      body.classList.add("en-visible");
+      btnEn.classList.add("active");
+      btnFr.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
